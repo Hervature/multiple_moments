@@ -10,4 +10,6 @@
  *
  *= require_self
  *= require_tree .
+ *= require uikit.gradient.min.css
+ *= require addons/uikit.gradient.addons.min.css
  */

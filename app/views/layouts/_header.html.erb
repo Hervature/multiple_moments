@@ -1,0 +1,55 @@
+
+<div id="logo-bar" class="uk-grid red">
+	<div class="uk-width-large-1-4 uk-width-1-2">
+		<%= image_tag("logo.png", alt: "logo", class: "logo") %>
+	</div>
+	<div class="uk-width-2-4 uk-vertical-align uk-visible-large logo">
+		<div class="uk-vertical-align-middle">
+	    	<%= image_tag("http://placehold.it/500x90", class: "uk-align-center uk-margin-bottom-remove") %>
+	    </div>
+	</div>
+	<div class="uk-width-large-1-4 uk-width-1-2">
+		<div class="login">
+			<button class="uk-button uk-width-1-1 uk-margin-top" type="button">Login</button>
+			<div class="clearfix"> </div>
+			<div class="icons uk-margin-bottom-remove">
+				<h3 class="uk-display-inline-block uk-text-bold">Visit Us At:</h3>
+				<a href="" class="uk-icon-button uk-icon-facebook"></a>
+				<a href="" class="uk-icon-button uk-icon-twitter"></a>
+			</div>
+		</div>
+	</div>
+	<div class="uk-clearfix"></div>
+</div>
+<nav class="uk-navbar">
+    <ul class="uk-navbar-nav uk-hidden-medium uk-hidden-small">
+        <li class="uk-active"><a href="">Home</a></li>
+        <li><a href="">Support Networks</a></li>
+        <li><a href="">Ages & Stages</a></li>
+        <li><a href="">E-Newsletters</a></li>
+        <li><a href="">Advertising</a></li>
+        <li><a href="">Contact Us</a></li>
+        <li><a href="">Archive</a></li>
+    </ul>
+    <div class="uk-navbar-flip">
+        <div class="uk-navbar-content">
+            <form class="uk-search">
+			    <input class="uk-search-field" type="search" placeholder="Search">
+			</form>
+        </div>
+    </div>
+    <a href="#mobile-bar" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+</nav>
+<div id="mobile-bar" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+	        <li class="uk-active"><a href="">Home</a></li>
+	        <li><a href="">Support Networks</a></li>
+	        <li><a href="">Ages & Stages</a></li>
+	        <li><a href="">E-Newsletters</a></li>
+	        <li><a href="">Advertising</a></li>
+	        <li><a href="">Contact Us</a></li>
+	        <li><a href="">Archive</a></li>
+        </ul>
+    </div>
+</div>

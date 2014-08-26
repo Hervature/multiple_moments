@@ -1,0 +1,12 @@
+<div class="uk-grid">
+  <div class="uk-width-medium-3-6 uk-push-1-6">
+    <article class="uk-article">
+        <h1 class="uk-article-title"><%= @article.title %></h1>
+        <p class="uk-article-meta">Written by Super User on <%= @article.created_at.strftime("%m-%d-%Y") %>. Posted in Blog</p>
+        <%= @article.body %>
+    </article>
+  </div>
+  <div class="uk-width-medium-1-4 uk-push-1-6">
+    <%= image_tag("http://placehold.it/250x450", class: "uk-align-center uk-margin-bottom-remove") %>
+  </div>
+</div>
