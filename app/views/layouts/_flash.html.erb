@@ -1,0 +1,10 @@
+<% if flash.present? %>
+	<% flash.each do |key, value| %>
+		<div class="flash-wrapper">
+		  <div class="<%= flash_class(key) %> uk-width-medium-1-2 uk-push-1-4">
+				<a href="" class="uk-alert-close uk-close"></a>
+		  	<p><%= value %></p>
+		  </div>
+	  </div>
+	<% end %>
+<% end %>

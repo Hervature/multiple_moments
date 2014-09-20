@@ -15,3 +15,10 @@
 //= require uikit.min.js
 //= require turbolinks
 //= require_tree .
+//= require codemirror.js
+//= require markdown.js
+//= require overlay.js
+//= require xml.js
+//= require gfm.js
+//= require marked.js
+//= require htmleditor.js

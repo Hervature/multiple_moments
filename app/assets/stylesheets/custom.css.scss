@@ -21,6 +21,10 @@ $logo-bar-height: 100px;
 				color: white;
 			}
 		}
+
+		a {
+			padding: 0 5px;
+		}
 	}
 }
 
@@ -52,6 +56,23 @@ $logo-bar-height: 100px;
 			color: white;
 		}
 	}
+
+	.flash-wrapper {
+		padding: 0 15px;
+	}
+}
+
+form {
+	margin-bottom: 15px;
+
+	input.text_input {
+		width: 65%;
+		max-width: 300px !important;	
+	}
+}
+
+.uk-htmleditor {
+	padding: 15px;
 }
 
 footer {
