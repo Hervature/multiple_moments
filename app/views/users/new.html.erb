@@ -1,5 +1,6 @@
 <div class='uk-text-center'>
   <%= form_for @user, html: {class: 'uk-form .uk-container-center'} do |f| %>
+    <%= render 'layouts/error_messages', object: f.object %>
     <fieldset>
     <legend>Create a New User</legend>
       <div class="uk-form-row">
@@ -8,7 +9,7 @@
       </div>
 
       <div class="uk-form-row">
-        <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.label :password %> <br />
         <%= f.password_field :password, autocomplete: "off", class: 'text_input' %>
       </div>
 
