@@ -1,0 +1,23 @@
+<div class="uk-width-1-2 uk-container-center">
+  <table class="uk-table">
+    <thead>
+      <tr>
+          <th>Email</th>
+          <th>Type</th>
+          <th></th>
+          <th></th>
+      </tr>
+    </thead>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.type %></td>
+        <td><%= link_to "Edit", edit_user_path(user) %></td>
+        <td><%= link_to "Remove", :users, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to "New User",  new_user_path, :class => "uk-button" %>
+</div>

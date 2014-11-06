@@ -41,8 +41,10 @@
         <li><a href="">Contact Us</a></li>
         <li><a href="">Archive</a></li>
 
-        <% if current_user.type == 'Editor' %>
-          <li><%= link_to "Admin Panel", admin_page_path %></li>
+        <% if user_signed_in? %>
+          <% if current_user.type == 'Editor' %>
+            <li><%= link_to "Admin Panel", admin_page_path %></li>
+          <% end %>
         <% end %>
 
     </ul>
@@ -65,6 +67,13 @@
 	        <li><a href="">Advertising</a></li>
 	        <li><a href="">Contact Us</a></li>
 	        <li><a href="">Archive</a></li>
+
+          <% if user_signed_in? %>
+            <% if current_user.type == 'Editor' %>
+              <li><%= link_to "Admin Panel", admin_page_path %></li>
+            <% end %>
+          <% end %>
+
         </ul>
     </div>
 </div>

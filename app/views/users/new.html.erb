@@ -1,0 +1,30 @@
+<div class='uk-text-center'>
+  <%= form_for @user, html: {class: 'uk-form .uk-container-center'} do |f| %>
+    <fieldset>
+    <legend>Create a New User</legend>
+      <div class="uk-form-row">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: 'text_input' %>
+      </div>
+
+      <div class="uk-form-row">
+        <%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.password_field :password, autocomplete: "off", class: 'text_input' %>
+      </div>
+
+      <div class="uk-form-row">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'text_input' %>
+      </div>
+
+      <div class="uk-form-row">
+        <%= f.label :user_type %><br />
+        <%= f.select(:type, [['Editor', 'Editor'], ['Writer', 'Writer'], ['Reader', 'Reader']]) %>
+      </div>
+
+      <div class="uk-form-row">
+        <%= f.submit "Create User", class: 'uk-button' %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
