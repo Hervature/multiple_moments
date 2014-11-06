@@ -1,0 +1,1 @@
+class Writer < User; end

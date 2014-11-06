@@ -10,21 +10,17 @@
 	</div>
 	<div class="uk-width-large-1-4 uk-width-1-2">
 		<div class="login uk-grid">
+
 			<% if user_signed_in? %>
-				<div class="uk-width-1-2 uk-margin-top">
-					<%= link_to "Account",  edit_user_registration_path, :class => "uk-button uk-width-1-1" %>
-				</div>
-				<div class="uk-width-1-2 uk-margin-top">
+				<div class="uk-width-2-2 uk-margin-top">
 					<%= link_to "Logout",  destroy_user_session_path, :class => "uk-button uk-width-1-1", method: :delete %>
 				</div>
 			<% else %>
-				<div class="uk-width-1-2 uk-margin-top">
+				<div class="uk-width-2-2 uk-margin-top">
 					<%= link_to "Login",  new_user_session_path, :class => "uk-button uk-width-1-1" %>
 				</div>
-				<div class="uk-width-1-2 uk-margin-top">
-					<%= link_to "Sign Up",  new_user_registration_path, :class => "uk-button uk-width-1-1" %>
-				</div>
-			<% end %>	
+			<% end %>
+
 			<div class="clearfix"> </div>
 			<div class="icons uk-margin-bottom-remove">
 				<h3 class="uk-display-inline-block uk-text-bold uk-hidden-small">Social Media:&nbsp&nbsp</h3>
@@ -44,6 +40,11 @@
         <li><a href="">Advertising</a></li>
         <li><a href="">Contact Us</a></li>
         <li><a href="">Archive</a></li>
+
+        <% if current_user.type == 'Editor' %>
+          <li><%= link_to "Admin Panel", admin_page_path %></li>
+        <% end %>
+
     </ul>
     <div class="uk-navbar-flip">
         <div class="uk-navbar-content">
