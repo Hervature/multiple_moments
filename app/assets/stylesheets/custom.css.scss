@@ -65,10 +65,6 @@ $logo-bar-height: 100px;
 form {
 	margin-bottom: 15px;
 
-	input.text_input {
-		width: 65%;
-		max-width: 300px !important;	
-	}
 }
 
 .uk-htmleditor {
@@ -96,4 +92,8 @@ footer {
 	p, ul {
 		padding: 5px;
 	}
+}
+
+div.field_with_errors {
+  display: inline;
 }

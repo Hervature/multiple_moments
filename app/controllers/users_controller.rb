@@ -15,19 +15,29 @@ before_action :authenticate_user!
   def edit
   end
 
-  # POST /articles
-  # POST /articles.json
+  # POST /users
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      redirect_to users_path, notice: 'User was successfully created.'
+    else
+      render 'new'
+    end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted."
+    redirect_to users_url
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to users_path
+    else
+      render 'edit'
     end
   end
 

@@ -1,13 +1,13 @@
 MultipleMoments::Application.routes.draw do
   devise_for :users
   resources :articles
-  resources :users, only: [:index, :edit, :new, :create]
+  resources :users, except: [:show]
   get 'admin', to: 'static_pages#admin', :as => 'admin_page'
 
   # These are needed so the child classes' paths are the same as users
-  resources :editors, :controller => 'users'
-  resources :writers, :controller => 'users'
-  resources :readers, :controller => 'users'
+  resources :editors, except: [:show], :controller => 'users'
+  resources :writers, except: [:show], :controller => 'users'
+  resources :readers, except: [:show], :controller => 'users'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
