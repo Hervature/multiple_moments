@@ -1,4 +1,6 @@
 MultipleMoments::Application.routes.draw do
+  resources :headers, except: [:show]
+
   devise_for :users
   resources :articles
   resources :users, except: [:show]

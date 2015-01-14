@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106134804) do
+ActiveRecord::Schema.define(version: 20150114060146) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "body",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "headers", force: true do |t|
+    t.string   "title"
+    t.boolean  "show_in_nav", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

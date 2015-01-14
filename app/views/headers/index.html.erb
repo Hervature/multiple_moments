@@ -1,0 +1,23 @@
+<div class="uk-width-1-2 uk-container-center">
+  <table class="uk-table">
+    <thead>
+      <tr>
+          <th>Title</th>
+          <th>Show In Navbar?</th>
+          <th></th>
+          <th></th>
+      </tr>
+    </thead>
+
+    <% @headers.each do |header| %>
+      <tr>
+        <td><%= header.title %></td>
+        <td><%= header.show_in_nav %></td>
+        <td><%= link_to "Edit", edit_header_path(header) %></td>
+        <td><%= link_to "Remove", header, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= link_to "New Header",  new_header_path, :class => "uk-button" %>
+</div>
