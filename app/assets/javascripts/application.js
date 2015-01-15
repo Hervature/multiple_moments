@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require uikit.min.js
 //= require turbolinks
-//= require_tree .
 //= require codemirror.js
 //= require markdown.js
 //= require overlay.js

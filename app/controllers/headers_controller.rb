@@ -1,5 +1,6 @@
 class HeadersController < ApplicationController
   before_action :set_header, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /headers
   # GET /headers.json

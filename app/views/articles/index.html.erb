@@ -7,7 +7,6 @@
           <h3 class="uk-panel-title red">Featured Article
             <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
           </h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
 
         <% @headers[0..-1].each_with_index do |header, index| %>
@@ -16,7 +15,12 @@
           <h3 class="uk-panel-title red"><%= header.title %>
             <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
           </h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <% unless @articles.where("header_id=#{header.id}").first.nil? %>
+            <h2>
+              <%=@articles.where("header_id=#{header.id}").first.title %>
+            </h2>
+            <%= @articles.where("header_id=#{header.id}").first.html.html_safe %>
+          <% end %>
         </div>
           <% end %>
         <% end %>
@@ -29,7 +33,12 @@
           <h3 class="uk-panel-title blue"><%= header.title %>
             <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
           </h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <% unless @articles.where("header_id=#{header.id}").first.nil? %>
+            <h2>
+              <%= @articles.where("header_id=#{header.id}").first.title %>
+            </h2>
+            <%= @articles.where("header_id=#{header.id}").first.html.html_safe %>
+          <% end %>
         </div>
           <% end %>
         <% end %>

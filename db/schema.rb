@@ -11,14 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114060146) do
+ActiveRecord::Schema.define(version: 20150115064951) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
-    t.text     "body",       limit: 255
+    t.text     "markup"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "html"
+    t.string   "author"
+    t.integer  "header_id"
   end
+
+  add_index "articles", ["header_id"], name: "index_articles_on_header_id"
 
   create_table "headers", force: true do |t|
     t.string   "title"

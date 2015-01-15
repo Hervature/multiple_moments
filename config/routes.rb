@@ -3,6 +3,7 @@ MultipleMoments::Application.routes.draw do
 
   devise_for :users
   resources :articles
+  get 'admin/articles', to: 'articles#admin_index', :as => 'admin_index'
   resources :users, except: [:show]
   get 'admin', to: 'static_pages#admin', :as => 'admin_page'
 

@@ -2,8 +2,8 @@
   <div class="uk-width-medium-3-6 uk-push-1-6">
     <article class="uk-article">
         <h1 class="uk-article-title"><%= @article.title %></h1>
-        <p class="uk-article-meta">Written by Super User on <%= @article.created_at.strftime("%m-%d-%Y") %>. Posted in Blog</p>
-        <%= @article.body %>
+        <p class="uk-article-meta">Written by <%= @article.author %> on <%= @article.created_at.strftime("%m-%d-%Y") %>.</p>
+        <%= @article.html.html_safe %>
     </article>
   </div>
   <div class="uk-width-medium-1-4 uk-push-1-6">
