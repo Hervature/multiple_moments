@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require tree .
+//= require_tree .
 //= require uikit.min.js
 //= require turbolinks
 //= require codemirror.js
