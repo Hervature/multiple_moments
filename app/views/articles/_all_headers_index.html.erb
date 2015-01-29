@@ -11,7 +11,7 @@
           <%= article.title %>
         </h2>
           <%# Preview article at least 250 characters up to the first closing p tag %>
-          <%= article.html[0..article.html.index('</p>', 250)+3].html_safe %>
+          <%= article.html[0..article.html.index('<hr>')+3].html_safe %>
           <%= link_to "Read More", article%>
         <% end %>
     </div>
@@ -30,7 +30,7 @@
           <%= article.title %>
         </h2>
           <%# Preview article at least 250 characters up to the first closing p tag %>
-          <%= article.html[0..article.html.index('</p>', 250)+3].html_safe %>
+          <%= article.html[0..article.html.index('<hr>')+3].html_safe %>
           <%= link_to "Read More", article%>
         <% end %>
     </div>
