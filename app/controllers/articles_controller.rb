@@ -4,8 +4,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
-    @headers = Header.all
+    # Get articles through header to articles relationship
+    @headers = Header.by_slug(params[:header_id])
   end
 
   # GET /articles/1

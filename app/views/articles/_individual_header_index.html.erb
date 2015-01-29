@@ -1,0 +1,13 @@
+<div class="uk-margin-left">
+<h2><%= @headers.title %></h2>
+<% @headers.articles.order(created_at: :asc).each do |article| %>
+  <hr class="uk-article-divider">
+  <h3>
+    <%= article.title %>
+  </h3>
+  <p class="uk-article-meta">Written by <%= article.author %> on <%= article.created_at.strftime("%m-%d-%Y") %>.
+  <%# Preview article at least 250 characters up to the first closing p tag %>
+  <%= article.html[0..article.html.index('</p>', 250)+3].html_safe %>
+  <%= link_to "Read More", article%>
+<% end %>
+</div>

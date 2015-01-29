@@ -1,5 +1,7 @@
 MultipleMoments::Application.routes.draw do
-  resources :headers, except: [:show]
+  resources :headers, except: [:show] do
+    resources :articles, :only => [:index]
+end
 
   devise_for :users
   resources :articles

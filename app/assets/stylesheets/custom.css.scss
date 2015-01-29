@@ -47,12 +47,11 @@ $logo-bar-height: 100px;
 			padding: 5px 20px;
 		}
 
-		a {
+		h3 a {
 			color: white;
-			font-size: small;
 		}
 
-		a:hover {
+		h3 a:hover {
 			color: white;
 		}
 	}
@@ -91,6 +90,14 @@ footer {
 
 	p, ul {
 		padding: 5px;
+	}
+
+	a {
+		color: white;
+	}
+
+	a:hover {
+		color: white;
 	}
 }
 

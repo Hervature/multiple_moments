@@ -2,47 +2,13 @@
   <div class="uk-width-large-3-4 uk-width-medium-2-3">
     <div class="uk-grid">
 
-      <div class="uk-width-large-2-5 uk-width-medium-4-5 uk-push-1-5 uk-margin-bottom">
-        <div class="uk-panel">
-          <h3 class="uk-panel-title red">Featured Article
-            <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
-          </h3>
-        </div>
+    <%# If there is ActiveRecord, then there is only one header and so we should show all articles under that header %>
+    <% if @headers.is_a?(ActiveRecord::Relation) %>
+      <%= render 'all_headers_index' %>
+    <% else %>
+      <%= render 'individual_header_index' %>
+    <% end %>
 
-        <% @headers[0..-1].each_with_index do |header, index| %>
-          <% if index % 2 == 1 %>
-        <div class="uk-panel">
-          <h3 class="uk-panel-title red"><%= header.title %>
-            <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
-          </h3>
-          <% unless @articles.where("header_id=#{header.id}").first.nil? %>
-            <h2>
-              <%=@articles.where("header_id=#{header.id}").first.title %>
-            </h2>
-            <%= @articles.where("header_id=#{header.id}").first.html.html_safe %>
-          <% end %>
-        </div>
-          <% end %>
-        <% end %>
-      </div>
-
-      <div class="uk-width-large-2-5 uk-width-medium-4-5 uk-push-1-5 uk-margin-bottom">
-        <% @headers[0..-1].each_with_index do |header, index| %>
-          <% if index % 2 == 0 %>
-        <div class="uk-panel">
-          <h3 class="uk-panel-title blue"><%= header.title %>
-            <a href="articles/1" class="uk-align-right">Show All <i class="uk-icon-caret-square-o-right"></i></a>
-          </h3>
-          <% unless @articles.where("header_id=#{header.id}").first.nil? %>
-            <h2>
-              <%= @articles.where("header_id=#{header.id}").first.title %>
-            </h2>
-            <%= @articles.where("header_id=#{header.id}").first.html.html_safe %>
-          <% end %>
-        </div>
-          <% end %>
-        <% end %>
-      </div>
     </div>
   </div>
   <div class="uk-width-medium-1-3 uk-width-large-1-4">
