@@ -1,16 +1,16 @@
 <% @headers[0..-1].each_with_index do |header, index| %>
   <% if index % 2 == 1 %>
-  <% unless header.articles.first.nil? %>
+  <% unless header.articles.where(published: true).first.nil? %>
   <div class="uk-width-large-2-5 uk-width-medium-4-5 uk-push-1-5 uk-margin-bottom">
     <div class="uk-panel">
       <h3 class="uk-panel-title red">
         <a href="headers/<%= header.slug %>/articles"><%= header.title %> <i class="uk-icon-angle-double-right"></i></a>
       </h3>
-        <% header.articles.order(created_at: :asc).limit(2).each do |article| %>
+        <% header.articles.where(published: true).order(created_at: :asc).limit(2).each do |article| %>
         <h2>
           <%= article.title %>
         </h2>
-          <%# Preview article at least 250 characters up to the first closing p tag %>
+          <%# Preview article at least 250 characters up to the first hr tag %>
           <%= article.html[0..article.html.index('<hr>')+3].html_safe %>
           <%= link_to "Read More", article%>
         <% end %>
@@ -19,17 +19,17 @@
   <% end %>
   <% end %>
   <% if index % 2 == 0 %>
-  <% unless header.articles.first.nil? %>
+  <% unless header.articles.where(published: true).first.nil? %>
   <div class="uk-width-large-2-5 uk-width-medium-4-5 uk-push-1-5 uk-margin-bottom">
     <div class="uk-panel">
       <h3 class="uk-panel-title blue">
         <a href="headers/<%= header.slug %>/articles"><%= header.title %> <i class="uk-icon-angle-double-right"></i></a>
       </h3>
-        <% header.articles.order(created_at: :asc).limit(2).each do |article| %>
+        <% header.articles.where(published: true).order(created_at: :asc).limit(2).each do |article| %>
         <h2>
           <%= article.title %>
         </h2>
-          <%# Preview article at least 250 characters up to the first closing p tag %>
+          <%# Preview article at least 250 characters up to the first hr tag %>
           <%= article.html[0..article.html.index('<hr>')+3].html_safe %>
           <%= link_to "Read More", article%>
         <% end %>

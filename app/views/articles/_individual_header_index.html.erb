@@ -1,6 +1,6 @@
 <div class="uk-margin-left">
 <h2><%= @headers.title %></h2>
-<% @headers.articles.order(created_at: :asc).each do |article| %>
+<% @headers.articles.where(published: true).order(created_at: :asc).each do |article| %>
   <hr class="uk-article-divider">
   <h3>
     <%= article.title %>

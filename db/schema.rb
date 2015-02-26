@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129075244) do
+ActiveRecord::Schema.define(version: 20150226183648) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20150129075244) do
     t.text     "html"
     t.string   "author"
     t.integer  "header_id"
+    t.string   "author_url"
+    t.boolean  "public_access", default: false
+    t.boolean  "published",     default: false
+    t.boolean  "featured",      default: false
+    t.datetime "published_at"
   end
 
   add_index "articles", ["header_id"], name: "index_articles_on_header_id"
@@ -31,6 +36,16 @@ ActiveRecord::Schema.define(version: 20150129075244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+  end
+
+  create_table "images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "article_id"
   end
 
   create_table "users", force: true do |t|
