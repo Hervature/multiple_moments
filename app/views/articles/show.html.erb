@@ -3,10 +3,11 @@
     <article class="uk-article">
         <h1 class="uk-article-title"><%= @article.title %></h1>
         <p class="uk-article-meta">
-          Written by <a href="<%= @article.author_url %>" target="_blank"><%= @article.author %></a> on <% unless @article.published_at.blank? %>
-          <%= article.published_at.strftime("%m-%d-%Y") %>
+          Written by <a href="<%= @article.author_url %>" target="_blank"><%= @article.author %></a> on&nbsp
+          <% unless @article.published_at.blank? %>
+            <%= @article.published_at.strftime("%m-%d-%Y") %>
           <% else %>
-          <%= article.updated_at.strftime("%m-%d-%Y") %>
+            <%= @article.updated_at.strftime("%m-%d-%Y") %>
           <% end %>.
         </p>
         <%= @article.html.html_safe %>
