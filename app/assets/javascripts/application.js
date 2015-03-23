@@ -21,3 +21,4 @@
 //= require gfm.js
 //= require marked.js
 //= require htmleditor.js
+//= require cocoon

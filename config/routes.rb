@@ -8,11 +8,7 @@ end
   get 'admin/articles', to: 'articles#admin_index', :as => 'admin_index'
   resources :users, except: [:show]
   get 'admin', to: 'static_pages#admin', :as => 'admin_page'
-
-  # These are needed so the child classes' paths are the same as users
-  resources :editors, except: [:show], :controller => 'users'
-  resources :writers, except: [:show], :controller => 'users'
-  resources :readers, except: [:show], :controller => 'users'
+  resources :images, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

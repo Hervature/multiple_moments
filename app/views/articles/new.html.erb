@@ -1,5 +1,5 @@
 <%= javascript_include_tag "articles", "data-turbolinks-track" => true %>
-<%= form_for @article, html: {class: 'uk-form .uk-container-center', multipart: true} do |f| %>
+<%= form_for @article, html: {class: 'uk-form .uk-container-center'} do |f| %>
   <fieldset>
     <div class='uk-width-medium-1-2 uk-push-1-4'>
       <legend>Create a New Article</legend>
@@ -33,14 +33,11 @@ Markdown is a fancy way of writing web documents using symbols like *look I'm sp
     <%= f.hidden_field :html %>
 
     <div class='uk-width-medium-1-2 uk-push-1-4'>
-      <div class="uk-form-row uk-width-medium-2-3 uk-push-1-6">
-        <% f.fields_for :images do |builder| %>
-          adfads
-          <%= builder.label :photo, "Image File" %>
-          <%= builder.file_field :photo %>
-
-        <% end %>
-      </div>
+      <!-- Images form -->
+      <%= f.fields_for :images, Image.new, html: {class: 'uk-form .uk-container-center', multipart: true} do |image| %>
+          <%= render 'image_fields', f: image %>
+          <%= link_to_add_association 'add photo', f, :images %>
+      <% end %>
       <div class="uk-form-row uk-width-medium-2-3 uk-push-1-6">
         <%= f.label :heading %> <br />
         <%= f.select :header_id, @headers.collect {|a| [a.title, a.id]} %>

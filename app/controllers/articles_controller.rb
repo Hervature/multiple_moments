@@ -15,14 +15,12 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @article.images.build
     @headers = Header.all
   end
 
   # GET /articles/1/edit
   def edit
     @headers = Header.all
-    @article.images.build
   end
 
   # POST /articles
@@ -66,6 +64,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :markup, :html, :author, :author_url, :header_id, :published, :featured, :public_access)
+      params.require(:article).permit(:title, :markup, :html, :author, :author_url, :header_id, :published, :featured, :public_access, images_attributes: [:id, :photo, :photo_file_name, :_destroy])
     end
 end

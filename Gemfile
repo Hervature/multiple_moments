@@ -22,7 +22,8 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'devise', '~> 3.3.0'
 gem 'friendly_id', '~> 5.1.0'
-gem "paperclip", "~> 4.2"
+gem "paperclip", '~> 4.2'
+gem "cocoon", '~> 1.2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
