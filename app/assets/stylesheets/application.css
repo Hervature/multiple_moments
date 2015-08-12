@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
- *= require uikit.gradient.min.css
+ *= require uikit.almost-flat.min.css
+ *= require_tree ../../../vendor/assets/stylesheets/components
  *= require codemirror.css
- *= require addons/uikit.gradient.addons.min.css
  */

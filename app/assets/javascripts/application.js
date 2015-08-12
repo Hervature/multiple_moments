@@ -20,5 +20,6 @@
 //= require xml.js
 //= require gfm.js
 //= require marked.js
-//= require htmleditor.js
+//= require_tree ../../../vendor/assets/javascripts/components
+//= require_tree ../../../vendor/assets/javascripts/core
 //= require cocoon

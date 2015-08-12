@@ -8,7 +8,10 @@ end
   get 'admin/articles', to: 'articles#admin_index', :as => 'admin_index'
   resources :users, except: [:show]
   get 'admin', to: 'static_pages#admin', :as => 'admin_page'
-  resources :images, only: [:create]
+  resources :images, only: [:destroy]
+  resources :editors, :controller => 'users'
+  resources :readers, :controller => 'users'
+  resources :writers, :controller => 'users'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
